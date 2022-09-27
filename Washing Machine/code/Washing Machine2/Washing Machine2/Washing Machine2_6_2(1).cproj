@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.2</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
+    <ProjectGuid>{b6ae2947-f164-4a6f-96df-31d045808b7b}</ProjectGuid>
+    <avrdevice>ATmega32</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>Washing Machine2</AssemblyName>
+    <Name>Washing Machine2</Name>
+    <RootNamespace>Washing Machine2</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.19.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../Application</Value>
+            <Value>../ComplexDriver</Value>
+            <Value>../ECUAL</Value>
+            <Value>../MCAL</Value>
+            <Value>../OS</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Application\assist.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\Machine.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\Machine.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\MAIN.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ComplexDriver\MACROSH.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ComplexDriver\MC_Config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ComplexDriver\StandardTypes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\I2C_EEPROM.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\I2C_EEPROM.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\LCD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\LCD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\RTC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ECUAL\RTC.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\ADC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\ADC.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EX_INTERRUPT.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EX_INTERRUPT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\GPIO.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\GPIO.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\I2C.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\I2C.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\Timer0.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\Timer0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\Timer1.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\Timer1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\Timer2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\Timer2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\USART.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\USART.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OS\Scheduler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="OS\Scheduler.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application" />
+    <Folder Include="ComplexDriver" />
+    <Folder Include="ECUAL" />
+    <Folder Include="MCAL" />
+    <Folder Include="OS" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
